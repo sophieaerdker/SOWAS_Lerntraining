@@ -28,7 +28,7 @@
 \frametitle{Overview}
 	Python is ...\\
 	\begin{itemize}
-		\item interpreted 
+		\item interpreted
 		\item interactive 
 		\item object-oriented 
 		\item a beginners language!
@@ -100,8 +100,8 @@
 	\begin{itemize}
 		\item Numbers, like 5 and 10
 		\item Strings, like "Hello World!"
-		\item Lists
-		\item Dictionary
+		\item Lists, 
+		\item Dictionary, sometimes very useful but is not presented here
 		\item Tuple
 	\end{itemize}
 	Data types can be stored in variables:
@@ -185,6 +185,21 @@
 	\end{alertblock}
 \end{frame}
 
+\subsection{Strings}
+
+\begin{frame}
+\frametitle{Strings and string formatting}
+	\begin{itemize}
+		\item In Python there is no difference between 'chars' and "strings", single and double quotes are treated the same.
+		\item You can create strings simply by putting characters in quotes: str = \texttt{"Hello World!"}
+	\end{itemize}
+	You can format strings using the string formatting operator '\%': \\
+	%\includegraphics[width = 1\textwidth]{}
+	
+	You can find a table with format symbols here: \url{https://www.tutorialspoint.com/python/python_strings.htm}
+\end{frame}
+
+
 \section{Decision Making}
 
 \begin{frame}
@@ -216,13 +231,139 @@
 	\end{alertblock}
 \end{frame}
 
+
+\section{Exercises}
+
 \begin{frame}
 \frametitle{Exercises}
 	\begin{itemize}
 		\item Write the program \texttt{EvenOdd.py} which returns wether a variable is even or odd! \\ Use operators and condition statements and print the value as well as the result!
 		\item Write the program \texttt{CharInString.py} which returns wether the string \texttt{"Hello World!"} contains a specific letter (a so called char)! \\ Use membership operators and the program should be case sensitive to keep it simple.
+		\item Bonus: Use a string method (\url{https://www.tutorialspoint.com/python/python_strings.htm}) to make \texttt{CharInString.py} case insensitive
 	\end{itemize}
+\end{frame}
+
+
+\section{Lists}
+
+\begin{frame}
+\frametitle{Lists}
+	A list contains several items like strings or numbers, you can easily create a list with [] and ,-separated items: 
+	\begin{itemize}
+	\item \texttt{fruits = ["apple", "banana", "strawberry"]}
+	\item \texttt{numbers = [1,1,2,3,5,8]}
+	\end{itemize}
+	The items in a list can be of different types:
+	\begin{itemize}
+	\item \texttt{book = ["title", "physics", 1997]} 
+	\end{itemize}
+	You can access an item in a list by its index:
+	\begin{columns}[T]
+	\begin{column}[T]{5cm}
+		\begin{itemize}
+			\item \texttt{fruits[1]} is \texttt{"banana"} 
+			\item \texttt{numbers[3]} is \texttt{3}
+		\end{itemize}
+	\end{column}
+	\begin{column}[T]{5cm}
+		\begin{itemize}
+			\item \texttt{fruits[0]} is \texttt{"apple"} 
+			\item \texttt{numbers[-1]} is \texttt{8}
+		\end{itemize}
+	\end{column}
+	\end{columns}
+	\begin{alertblock}{Index}
+	The index of a list starts with 0! You can use negative indices, too!
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Manipulating Lists}
+	You can use the index to change an item at the index position:
+	\begin{itemize}
+	\item \texttt{fruits[0] = "mango"} results in \texttt{fruits = ["mango", "banana", "strawberry"]}
+	\end{itemize}
+	You can delete an item at a specific position:
+	\begin{itemize}
+	\item \texttt{del fruits[0]} results in \texttt{fruits = ["banana", "strawberry"]}
+	\end{itemize}
+	List slicing with ':' :
+	\begin{itemize}
+	\item \texttt{numbers[1:4]} results in \texttt{numbers = [1,2,3]}
+	\item \texttt{numbers[2:]} results in \texttt{numbers = [2,3,5,8]}
+	\end{itemize}
+	Merge lists:
+	\begin{itemize}
+	\item \texttt{numbers} + [13,21,34] results in \texttt{[1,1,2,3,5,8,13,21,34]}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sequences}
+	\begin{alertblock}{Strings}
+		Lists and Strings both are sequences, thus accessing substrings and slicing strings works the same way!
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{List methods}
+	There are some useful methods for lists:
+	\begin{itemize}
+	\item \texttt{len(fruits)} returns the length of the list: 3
+	\item \texttt{max(numbers)} returns the maximum value: 8
+	\item \texttt{min(numbers)} returns the minimum value: 1
+	\item \texttt{list.sort([func])} sorts the list \texttt{list}, using an optional sort function
+	\item \texttt{list.count(obj)} returns how often \texttt{obj} occurs in \texttt{list}
+	\item \texttt{list.append(obj)} appends \texttt{obj} to \texttt{list}
+	\item \texttt{list.remove(obj)} remove \texttt{obj} at any position from \texttt{list}
+	\end{itemize}
+	You can find more methods and their decription on \url{https://www.tutorialspoint.com/python/python_lists.htm} or in the python documentation
+\end{frame}
+
+\section{Loops}
+
+\begin{frame}
+\frametitle{for-loops}
+	If you want to repeat a statement while a specific condition is True, you can use loops:
+	\begin{itemize}
+		\item \texttt{while}-loops: \\ repeats one or more statements while a condition is true; the condition is tested before executing the conditional code
+		\item \texttt{for}-loops: \\ iterates over the items of any sequence like strings or lists and executes the conditional code
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Examples}
 	
+\end{frame}
+
+\section{Exercises}
+
+\begin{frame}
+\frametitle{Exercises}
+	\begin{itemize}
+		\item Write the program \texttt{Faculty.py} that calculates the faculty of a certain number!
+		\item Write the program \texttt{FibonacciSeries.py} that returns the Fibonacci Series! Use a list to store your result beginning with \texttt{Fibonacci = [0,1]}, the series should not exceed 10,000.
+		\item Calculate the sum of all even numbers in your Fibonacci Series! You can reuse your code from exercise one.
+	\end{itemize}
+	There are many more mathematical problems or "number games" on \url {https://projecteuler.net/archives} you can solve with the few programming skills (but sometimes a lot of logical thinking) you have achieved here!
+\end{frame}
+
+\section{Functions}
+
+\begin{frame}
+\frametitle{Functions}
+	You can organize code, that performs a single action with help of functions. This makes your code more readable and reusable. \\ You already saw a lot of "build-in" functions, like the \texttt{print} statement or the methods to manipulating lists, like \texttt{max()}. You can easily define your own functions using the \texttt{def} keyword:
+	 
+\end{frame}
+
+\section{Exercises}
+
+\begin{frame}
+\frametitle{Exercises}
+	\begin{itemize}
+		\item Rewrite your \texttt{Faculty.py} program with a function \texttt{faculty(var)}!
+		\item Write the function \texttt{faculty(var)} \textit{recursive}. This means that the function calls itself!
+	\end{itemize}
 \end{frame}
 
 
