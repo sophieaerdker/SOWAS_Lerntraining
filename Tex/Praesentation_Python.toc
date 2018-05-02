@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{Overview}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Setup}{4}{0}{1}
+\beamer@sectionintoc {2}{First Steps}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Hello World!}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Simple Calculations}{6}{0}{2}
+\beamer@sectionintoc {3}{Variable Types}{7}{0}{3}
+\beamer@subsectionintoc {3}{1}{Numbers}{8}{0}{3}
+\beamer@subsectionintoc {3}{2}{Operators}{9}{0}{3}
+\beamer@sectionintoc {4}{Decision Making}{12}{0}{4}
