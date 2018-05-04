@@ -1,6 +1,7 @@
 \documentclass{beamer}
  
 \usepackage[utf8]{inputenc}
+\usepackage{multicol}
 
 \usetheme{Szeged}
 \usecolortheme{beaver} 
@@ -19,7 +20,9 @@
 \frame{\titlepage}
 \begin{frame}
 \frametitle{Table of Contents}
-	\tableofcontents
+	\begin{multicols}{3}
+ 		 \tableofcontents
+	\end{multicols}
 \end{frame}
 
 \section{Overview}
@@ -194,7 +197,8 @@
 		\item You can create strings simply by putting characters in quotes: str = \texttt{"Hello World!"}
 	\end{itemize}
 	You can format strings using the string formatting operator '\%': \\
-	%\includegraphics[width = 1\textwidth]{}
+	\includegraphics[width = 0.9\textwidth]{StringFormat.pdf} \\
+	\includegraphics[width = 0.8\textwidth]{StringFormatOutput.pdf}
 	
 	You can find a table with format symbols here: \url{https://www.tutorialspoint.com/python/python_strings.htm}
 \end{frame}
@@ -281,16 +285,16 @@
 \frametitle{Manipulating Lists}
 	You can use the index to change an item at the index position:
 	\begin{itemize}
-	\item \texttt{fruits[0] = "mango"} results in \texttt{fruits = ["mango", "banana", "strawberry"]}
+	\item \texttt{fruits[0] = "mango"} results in \texttt{["mango", "banana", "strawberry"]}
 	\end{itemize}
 	You can delete an item at a specific position:
 	\begin{itemize}
-	\item \texttt{del fruits[0]} results in \texttt{fruits = ["banana", "strawberry"]}
+	\item \texttt{del fruits[0]} results in \texttt{["banana", "strawberry"]}
 	\end{itemize}
 	List slicing with ':' :
 	\begin{itemize}
-	\item \texttt{numbers[1:4]} results in \texttt{numbers = [1,2,3]}
-	\item \texttt{numbers[2:]} results in \texttt{numbers = [2,3,5,8]}
+	\item \texttt{numbers[1:4]} results in \texttt{[1,2,3]}
+	\item \texttt{numbers[2:]} results in \texttt{[2,3,5,8]}
 	\end{itemize}
 	Merge lists:
 	\begin{itemize}
@@ -334,6 +338,21 @@
 \begin{frame}
 \frametitle{Examples}
 	
+	for-loop over a list:\\
+		\includegraphics[height = 1.4cm]{forLoop.pdf} $\,$\includegraphics[height = 1.4cm]{forLoop_Output.pdf}\\
+	while-loop: \\
+		\includegraphics[height = 1.6cm]{whileLoop.pdf}$\,$\includegraphics[height = 1.6cm]{whileLoop_Output.pdf}
+	
+\end{frame}
+\begin{frame}
+\frametitle{Examples}
+	
+	for-loop using \texttt{range()}:\\
+		\includegraphics[height = 1.3cm]{forLoopRange.pdf} $\,$
+		\includegraphics[height = 2cm]{forLoopRange_Output.pdf} \\
+	The \texttt{range()} method creates a list with the parameters \texttt{(begin, end, step)}, where the end-value is not included! Default values are: \texttt{begin = 0} and \texttt{step = 1}, thus \texttt{range(4)} wohuld create the list \texttt{[0,1,2,3]}.
+		
+	
 \end{frame}
 
 \section{Exercises}
@@ -352,8 +371,10 @@
 
 \begin{frame}
 \frametitle{Functions}
-	You can organize code, that performs a single action with help of functions. This makes your code more readable and reusable. \\ You already saw a lot of "build-in" functions, like the \texttt{print} statement or the methods to manipulating lists, like \texttt{max()}. You can easily define your own functions using the \texttt{def} keyword:
-	 
+	You can organize code, that performs a single action with help of functions. This makes your code more readable and reusable. \\ You already saw a lot of "build-in" functions, like the \texttt{print} statement or the methods to manipulating lists, like \texttt{max()}. \\\ You can easily define your own functions using the \texttt{def} keyword:\\
+		\includegraphics[height = 1.3cm]{isEvenFunc.pdf}\\
+	Calling a function: \\
+		\includegraphics[height = 1.3cm]{FunctionUse.pdf}	 
 \end{frame}
 
 \section{Exercises}
@@ -361,9 +382,87 @@
 \begin{frame}
 \frametitle{Exercises}
 	\begin{itemize}
-		\item Rewrite your \texttt{Faculty.py} program with a function \texttt{faculty(var)}!
-		\item Write the function \texttt{faculty(var)} \textit{recursive}. This means that the function calls itself!
+		\item Rewrite your \texttt{Faculty.py} program with a function \texttt{faculty(n)}!
+		\item Write the function \texttt{faculty(n)} \textit{recursive}. This means that the function calls itself! Take care of defining an end condition (like \texttt{faculty(0)} returns 1) , otherwise you get stuck in an infinite loop! \\
+		\begin{columns}[T]
+		\begin{column}[T]{6cm}
+			\includegraphics[width = 1\textwidth]{recursivePrim.pdf}
+		\end{column}
+		\begin{column}[T]{4cm}
+			Example: \\
+			Recursive function to calculate wether n is prime! But: this is not really efficient.
+		\end{column}
+		\end{columns}
 	\end{itemize}
+\end{frame}
+
+\section{Modules}
+
+\begin{frame}
+\frametitle{Modules}
+	For the purpose of organize and reuse your code you can create \textit{Modules} which are basically files containing Python code like functions, variables or \textit{classes}. You can \textit{import} such modules (or single functions) using the \texttt{import} statement:
+	\includegraphics[width = 0.5\textwidth]{ImportStatements.pdf}
+	\begin{alertblock}{Directory path}
+		Your main method and modules must be in the same directory or you have to define a PYTHONPATH.
+	\end{alertblock}
+\end{frame}
+	
+	\subsection{Namespaces}
+	
+\begin{frame}
+\frametitle{Namespaces}
+	\begin{columns}[T]
+		\begin{column}[T]{5.5cm}
+			To avoid typing the module name before each function you imported with the \texttt{import} statement or to confuse different functions with similar names, you can use \textit{namespaces}. \\ Or you can import all items from one module into the current namespace using * (although this is not recommended and should be used  wisely)
+		\end{column}
+		\begin{column}[T]{5cm}
+			\includegraphics[width = 1\textwidth]{Namespaces.pdf} \\
+			\includegraphics[width = 0.8\textwidth]{StarImport.pdf}
+		\end{column}
+		\end{columns}
+\end{frame}
+
+	\section{Command Line Arguments}
+
+\begin{frame}
+\frametitle{Command Line Arguments}
+	For a convenient use of your programs you wouldn't want to open your python file, change the variables, save the file and then run it over the command line. Instead it would be better to run the code and define the variables over the command line: \\ $\,$ \\
+	\includegraphics[width = 1\textwidth]{CommandLinePrime.pdf} \\
+	This works with the \texttt{sys}-module you can easily import. This system module provides the list \texttt{sys.argv} which contains command line arguments as strings. \\ Another way is to read the keyboard input during runtime of your program using the \texttt{raw\_input} or \texttt{input} methods.
+\end{frame}
+
+\subsection{sys module}
+
+\begin{frame}
+\frametitle{sys-module example}
+	\includegraphics[width = 1\textwidth]{SysExample.pdf} 
+\end{frame}
+
+\section{Exercise}
+
+\begin{frame}
+\frametitle{Exercises}
+	\begin{itemize}
+		\item Write a new command line based faculty program using the sys module! Import your old \texttt{faculty} function to calcuate it!
+		\item Import the math module, and do some random calculation using its member functions. You can find them in the python documentary: \url{https://docs.python.org/2/library/math.html}
+	\end{itemize}
+\end{frame}
+
+\section{Files}
+
+\begin{frame}
+\frametitle{Opening and closing files}
+
+\end{frame}
+\begin{frame}
+\frametitle{Reading and writing files}
+
+\end{frame}
+
+\section{Matplotlib}
+\begin{frame}
+\frametitle{Matplotlib}
+
 \end{frame}
 
 
