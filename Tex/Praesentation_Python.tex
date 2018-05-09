@@ -58,13 +58,12 @@
 \frametitle{For you at home, here \texttt{python} is already installed!}
 	\begin{itemize}
 		\item Check if \texttt{Python} is already installed: open a terminal and type "python"
-		\item Linux:
-		\item Windows:
+		\item Linux: \texttt{sudo apt-get install python} or \texttt{sudo apt-get install python3} for python3
+		\item Windows: \url{https://www.python.org/downloads/windows/}
 	\end{itemize}
-	Using \textit{Anaconda}:
+	Using \textit{Anaconda} distribution, which makes it easy to install packages:
 	\begin{itemize}
-		\item Linux:
-		\item Windows:
+		\item \url{https://www.anaconda.com/download/}
 	\end{itemize}
 	Or use an IDE like \textit{eclipse} or \textit{Visual Studio}
 \end{frame}
@@ -465,18 +464,73 @@
 \section{Files}
 
 \begin{frame}
-\frametitle{Opening and closing files}
-
+\frametitle{Open files}
+	Using the \texttt{open}-function to open files in read (r), write (w) or append (a) modus:
+	\includegraphics[width = 1\textwidth]{openFiles.pdf}
 \end{frame}
-\begin{frame}
-\frametitle{Reading and writing files}
 
+\begin{frame}
+\frametitle{Open files}
+	\begin{alertblock}{Write-Modus}
+	If you open your file in write modus it overwrites the file if it exists! Otherwise it creates a new one.
+	\end{alertblock}
+	\begin{itemize}
+		\item You can use the modus \texttt{r+} or \texttt{w+} for reading AND writing
+		\item You can set the position in your file using \texttt{file.tell()} ehich returns the position in your file, and \texttt{file.seek(offset, from)}. Where \texttt{offset} denotes the number of bytes, and \texttt{from} specifies from where the bytes are moved
+		\item You can even delete files or make directories using the \texttt{os} module: \\ \url{https://www.tutorialspoint.com/python/python_files_io.htm}
+	\end{itemize}
 \end{frame}
 
 \section{Matplotlib}
 \begin{frame}
 \frametitle{Matplotlib}
+	\begin{itemize}
+		\item Matplotlib is a plotting library, you can easily import it with the import statement! Maybe you have to install it first 
+		\item We are going to use the \texttt{pyplot} module which provides MATLAB-like interfaces and functions for simple plotting
+		\item We also need the \texttt{NumPy} package in particular to get a real-valued \texttt{range} function, called \texttt{numpy.arange()}, but it's useful for example for n-dimensional arrays, too!
+	\end{itemize}
+\end{frame}
 
+\begin{frame}
+\frametitle{Simple plot}
+	\includegraphics[width = 0.8\textwidth]{SimplePlot.pdf}
+\end{frame}
+
+\begin{frame}
+\frametitle{Matplotlib}
+	\begin{itemize}
+		\item There are many more options you can set for your plots, like the range, colours or point-plots, a legend, some arrows and text boxes,...
+	 	\item There are many other plots functions like: contour-plots, histograms, 3D-plots, polar plot, scatter plots,...
+	 	\item You can use \texttt{TeX} statements in your plots using the \$-environment
+	 	\item The best practice is to search for an example which is almost what you need and then to change it so that it fits for your purpose!
+	 	\item If you want to plot your data with a ``lighter'' tool, you can use \texttt{gnuplot}! \url{http://www.gnuplot.info/}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercises}
+	\begin{itemize}
+		\item Implement an Euler integration for $f(t) = e^t$ with a step size of $\Delta t = 0.1$! Plot your numeric result as well as the analytic one using \texttt{np.exp()} in one plot to compare them! The Euler method for the differential equation $\partial_t f(t) = f(t)$ is:
+		\begin{align}
+		f_{\mathrm{n+1}} = f_{n} + \Delta t \cdot f_{n}
+		\end{align}
+		Store your result of each time step in a list to plot them after you calculated until a final time of $T= 5.0$ is reached. Use $f(0) = f_0 = 1$ as initial condition!
+		\item Store your results in a file (using a reasonable format) and save your plot!
+		
+	\end{itemize}
+\end{frame}
+
+\section{Literature}
+\begin{frame}
+\frametitle{Some literature and useful websites}
+	\begin{itemize}
+		\item This tutorial and some advanced methods: \url{https://www.tutorialspoint.com/python/python_lists.htm}
+		\item Book: \textit{A Primer on Scientific Programming with Python}, Hans Petter Langtangen, you can find it in our library, too!
+		\item No matter what problem you have, someone had it before: \url{https://stackoverflow.com/}
+		\item Python documentation: \url{https://www.python.org/} and matplotlib: \url{https://matplotlib.org/} use the examples and change them according to your wishes!
+		\item If you love mathematical problems: \url{https://projecteuler.net/}
+		\item My solutions to this exercises: \url{https://github.com/sophieaerdker/SOWAS_Lerntraining}
+	\end{itemize}
 \end{frame}
 
 
