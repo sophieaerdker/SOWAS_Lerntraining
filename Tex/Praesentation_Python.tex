@@ -46,7 +46,8 @@
 		\item Introduction to basic programming techniques in \texttt{python} as well as an outlook to advanced methods
 		\item There are exercises between some sections, where you can try out what you have learned bevor
 		\item The slices are english, as most of the documentation so that you become familiar with the technical terms
-		\item It will be a tight program, so don't worry if you don't understand everything directly! If you are intersted in programming, you can read a lot more in detail. I will present some literature later. 
+		\item It will be a tight program, so don't worry if you don't understand everything directly! If you are intersted in programming, you can read a lot more in detail. I will present some literature and helpful websites later. 
+		\item I will present python2 - what is not the latest standard, but for this tutorial the differences are not relevant.
 	\end{itemize}
 \end{frame}
 
@@ -57,8 +58,8 @@
 \begin{frame}
 \frametitle{For you at home, here \texttt{python} is already installed!}
 	\begin{itemize}
-		\item Check if \texttt{Python} is already installed: open a terminal and type "python"
-		\item Linux: \texttt{sudo apt-get install python} or \texttt{sudo apt-get install python3} for python3
+		\item Check if \texttt{Python} is already installed: open a terminal and type "python", if not:
+		\item Linux: type \texttt{sudo apt-get install python} or \texttt{sudo apt-get install python3} for python3
 		\item Windows: \url{https://www.python.org/downloads/windows/}
 	\end{itemize}
 	Using \textit{Anaconda} distribution, which makes it easy to install packages:
@@ -81,6 +82,7 @@
 				\item save it as "HelloWorld.py" under ...
 				\item open a terminal and go to your directory with cd ...
 				\item type: \texttt{python HelloWorld.py}
+				\item Instead you can try the interactive mode: Open a terminal and type \texttt{python}. Now you can type the mathematical expressions directly into the terminal and use it as an calculator.
 			\end{itemize}
 		\end{column}
 		\begin{column}[T]{5cm}
@@ -188,7 +190,7 @@
 \begin{frame}
 \frametitle{Other Operators}
 	\begin{alertblock}{Bitwise operators} 
-		which perform bit by bit operations like binary AND, binary OR or shifting
+		which perform bit by bit operations like: binary AND, OR, shifting
 	\end{alertblock}
 	\begin{alertblock}{Logical operators} 
 		\texttt{not} , \texttt{or} , \texttt{and} \\
@@ -316,13 +318,6 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Sequences}
-	\begin{alertblock}{Strings}
-		Lists and Strings both are sequences, thus accessing substrings and slicing strings works the same way!
-	\end{alertblock}
-\end{frame}
-
-\begin{frame}
 \frametitle{List methods}
 	There are some useful methods for lists:
 	\begin{itemize}
@@ -335,6 +330,14 @@
 	\item \texttt{list.remove(obj)} remove \texttt{obj} at any position from \texttt{list}
 	\end{itemize}
 	You can find more methods and their decription on \url{https://www.tutorialspoint.com/python/python_lists.htm} or in the python documentation
+\end{frame}
+
+\begin{frame}
+\frametitle{Manipulating Strings}
+	\begin{alertblock}{Strings}
+		Lists and Strings both are sequences, thus accessing substrings and slicing strings works the same way!
+	\end{alertblock}
+	
 \end{frame}
 
 \section{Loops}
@@ -363,7 +366,7 @@
 	for-loop using \texttt{range()}:\\
 		\includegraphics[height = 1.3cm]{forLoopRange.pdf} $\,$
 		\includegraphics[height = 2cm]{forLoopRange_Output.pdf} \\
-	The \texttt{range()} method creates a list with the parameters \texttt{(begin, end, step)}, where the end-value is not included! Default values are: \texttt{begin = 0} and \texttt{step = 1}, thus \texttt{range(4)} wohuld create the list \texttt{[0,1,2,3]}.
+	The \texttt{range()} method creates a list with the parameters \texttt{(begin, end, step)}, where the end-value is not included! Default values are: \texttt{begin = 0} and \texttt{step = 1}, thus \texttt{range(4)} would create the list \texttt{[0,1,2,3]}.
 		
 	
 \end{frame}
@@ -386,7 +389,7 @@
 \frametitle{Functions}
 	You can organize code, that performs a single action with help of functions. This makes your code more readable and reusable. \\ You already saw a lot of "build-in" functions, like the \texttt{print} statement or the methods to manipulating lists, like \texttt{max()}. \\\ You can easily define your own functions using the \texttt{def} keyword:\\
 		\includegraphics[height = 1.3cm]{isEvenFunc.pdf}\\
-	Calling a function: \\
+	And calling your function: \\
 		\includegraphics[height = 1.3cm]{FunctionUse.pdf}	 
 \end{frame}
 
@@ -403,7 +406,7 @@
 		\end{column}
 		\begin{column}[T]{4cm}
 			Example: \\
-			Recursive function to calculate wether n is prime! But: this is not really efficient.
+			Recursive function to calculate wether n is prime! 
 		\end{column}
 		\end{columns}
 	\end{itemize}
@@ -441,7 +444,7 @@
 \frametitle{Command Line Arguments}
 	For a convenient use of your programs you wouldn't want to open your python file, change the variables, save the file and then run it over the command line. Instead it would be better to run the code and define the variables over the command line: \\ $\,$ \\
 	\includegraphics[width = 1\textwidth]{CommandLinePrime.pdf} \\
-	This works with the \texttt{sys}-module you can easily import. This system module provides the list \texttt{sys.argv} which contains command line arguments as strings. \\ Another way is to read the keyboard input during runtime of your program using the \texttt{raw\_input} or \texttt{input} methods.
+	This works with the \texttt{sys}-module, which you can easily import. This system module provides the list \texttt{sys.argv} which contains command line arguments as strings. \\ Another way is to read the keyboard input during runtime of your program using the \texttt{raw\_input} or \texttt{input} methods.
 \end{frame}
 
 \subsection{sys module}
@@ -476,7 +479,7 @@
 	\end{alertblock}
 	\begin{itemize}
 		\item You can use the modus \texttt{r+} or \texttt{w+} for reading AND writing
-		\item You can set the position in your file using \texttt{file.tell()} ehich returns the position in your file, and \texttt{file.seek(offset, from)}. Where \texttt{offset} denotes the number of bytes, and \texttt{from} specifies from where the bytes are moved
+		\item You can set the position in your file using \texttt{file.tell()} which returns the position in your file, and \texttt{file.seek(offset, from)}. Where \texttt{offset} denotes the number of bytes, and \texttt{from} specifies from where the bytes are moved
 		\item You can even delete files or make directories using the \texttt{os} module: \\ \url{https://www.tutorialspoint.com/python/python_files_io.htm}
 	\end{itemize}
 \end{frame}
@@ -485,9 +488,9 @@
 \begin{frame}
 \frametitle{Matplotlib}
 	\begin{itemize}
-		\item Matplotlib is a plotting library, you can easily import it with the import statement! Maybe you have to install it first 
+		\item Matplotlib is a plotting library. You can import it with the import statement! (Maybe you have to install it first)
 		\item We are going to use the \texttt{pyplot} module which provides MATLAB-like interfaces and functions for simple plotting
-		\item We also need the \texttt{NumPy} package in particular to get a real-valued \texttt{range} function, called \texttt{numpy.arange()}, but it's useful for example for n-dimensional arrays, too!
+		\item We also need the \texttt{NumPy} package in particular to get a real-valued \texttt{range} function, called \texttt{numpy.arange()}, but it's very useful for example for n-dimensional arrays, too!
 	\end{itemize}
 \end{frame}
 
@@ -514,11 +517,25 @@
 		\begin{align}
 		f_{\mathrm{n+1}} = f_{n} + \Delta t \cdot f_{n}
 		\end{align}
-		Store your result of each time step in a list to plot them after you calculated until a final time of $T= 5.0$ is reached. Use $f(0) = f_0 = 1$ as initial condition!
+		Where $f_{\mathrm{n}}$ denotes the old solution state and $f_{\mathrm{n}+1}$ the new one, after one time step $\Delta t$. Thus, you can calculate $f_{1}$ using the initial values:
+		\begin{align}
+		f_{1} = f_{0} + \Delta t \cdot f_{0}
+		\end{align}
+		Use $f(0) = f_0 = 1$ as initial condition and a final time of $T = 5.0$!
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercises}
+	\begin{itemize}
+		\item Store your result of each time step in a list until a final time of $T= 5.0$ is reached. (Hint: use the \texttt{append()} method)
+		\item Plot the analytic and numeric result after you reached the final time $T$ in your Euler calculation. You can plot two functions in one plot by simply using the plot statement \texttt{plt.plot()} twice.
 		\item Store your results in a file (using a reasonable format) and save your plot!
 		
 	\end{itemize}
 \end{frame}
+
 
 \section{Literature}
 \begin{frame}
