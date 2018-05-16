@@ -334,9 +334,14 @@
 
 \begin{frame}
 \frametitle{Manipulating Strings}
-	\begin{alertblock}{Strings}
-		Lists and Strings both are sequences, thus accessing substrings and slicing strings works the same way!
-	\end{alertblock}
+		Lists and Strings both are sequences, thus accessing substrings and slicing strings works the same way! \\ $\,$\\ Some string methods working on \texttt{str = "hello world"}:
+		\begin{itemize}
+			\item \texttt{str.capitalize()} returns: \texttt{"Hello world!"}
+			\item \texttt{str.count('o')} counts how many times a substring occurs in string: 2
+			\item \texttt{str.find('o')} returns the index of the first substring it finds in str: 4 (negative index if substring is not included in str)
+			\item \texttt{str.isnumeric()} returns True if all characters in str are decimal: False
+			\item \texttt{str.replace('l', 'L')} replaces all 'l' in str with 'L': "heLLo worLd"
+		\end{itemize}
 	
 \end{frame}
 
@@ -406,7 +411,7 @@
 		\end{column}
 		\begin{column}[T]{4cm}
 			Example: \\
-			Recursive function to calculate wether n is prime! 
+			Recursive function to calculate wether n is a prime number! 
 		\end{column}
 		\end{columns}
 	\end{itemize}
@@ -513,7 +518,7 @@
 \begin{frame}
 \frametitle{Exercises}
 	\begin{itemize}
-		\item Implement an Euler integration for $f(t) = e^t$ with a step size of $\Delta t = 0.1$! Plot your numeric result as well as the analytic one using \texttt{np.exp()} in one plot to compare them! The Euler method for the differential equation $\partial_t f(t) = f(t)$ is:
+		\item Implement an Euler integration for $\partial_t f(t) = f(t)$ with a step size of $\Delta t = 0.1$! Plot your numeric result as well as the analytic one using \texttt{np.exp()} in one plot to compare them! In this case, the Euler method is:
 		\begin{align}
 		f_{\mathrm{n+1}} = f_{n} + \Delta t \cdot f_{n}
 		\end{align}
@@ -521,7 +526,7 @@
 		\begin{align}
 		f_{1} = f_{0} + \Delta t \cdot f_{0}
 		\end{align}
-		Use $f(0) = f_0 = 1$ as initial condition and a final time of $T = 5.0$!
+		And $f_2$ can be calculated with $f_1$ and so on.
 		
 	\end{itemize}
 \end{frame}
@@ -529,13 +534,25 @@
 \begin{frame}
 \frametitle{Exercises}
 	\begin{itemize}
+		\item Use $f(0) = f_0 = 1$ as initial condition and a final time of $T = 5.0$!
 		\item Store your result of each time step in a list until a final time of $T= 5.0$ is reached. (Hint: use the \texttt{append()} method)
 		\item Plot the analytic and numeric result after you reached the final time $T$ in your Euler calculation. You can plot two functions in one plot by simply using the plot statement \texttt{plt.plot()} twice.
-		\item Store your results in a file (using a reasonable format) and save your plot!
+		\item Store your results in a file (using a reasonable format) and save your plot! Use \texttt{\\n} and \texttt{\\t} to make a newline or a horizontal tab.
 		
 	\end{itemize}
 \end{frame}
 
+\section{Polyfit}
+\begin{frame}
+\frametitle{Polynomial fit with numpy}
+	Numpy provides a function for polynomial curve fitting based on the minimalization of the squared errors between the polynomial and your points. \\If you store your points in a \texttt{numpy array} you could fit them as follows:
+	%TODO Picture of curve fit!
+\end{frame}
+
+\begin{frame}
+\frametitle{Exercises}
+
+\end{frame}
 
 \section{Literature}
 \begin{frame}

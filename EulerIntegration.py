@@ -30,4 +30,13 @@ plt.xlabel("x")
 plt.ylabel("t")
 plt.title(r"Euler integration of $e^t$ with a step size of %.2f" %step)
 
+#saving data to file and save figure:
+
+#file = open("Data_EulerInt.txt", 'w')
+#file.write("Euler Integration of exp(t):\n t \t f(t)\n")
+#for i in range(len(x)):
+	#file.write("%.4f \t %.4f \n" %(t[i], x[i]))
+#file.close() # make sure you close your file!
+
+#plt.savefig("EulerIntegration.png")
 plt.show()
