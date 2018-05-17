@@ -20,7 +20,7 @@
 \frame{\titlepage}
 \begin{frame}
 \frametitle{Table of Contents}
-	\begin{multicols}{3}
+	\begin{multicols}{2}
  		 \tableofcontents
 	\end{multicols}
 \end{frame}
@@ -93,8 +93,6 @@
 
 \begin{frame}
 \frametitle{Simple Calculations}
-	\begin{columns}[T]
-		\begin{column}[T]{7cm}
 			\begin{itemize}
 				\item now type e.g. \texttt{x = 5} and \texttt{y = 10} under your print statement
 				\item type \texttt{print} and a calculation using +,-,*,/
@@ -102,11 +100,6 @@
 				\item What is the result of \texttt{x/y}?
 				\item Instead you can try the interactive mode: Open a terminal and type \texttt{python}. Now you can type the mathematical expressions directly into the terminal and use it as an calculator.
 			\end{itemize}
-		\end{column}
-		\begin{column}[T]{3cm}
-			\includegraphics[width = 1\textwidth]{SimpleCalculations.pdf}
-		\end{column}
-	\end{columns}
 \end{frame}
 
 \section{Variable Types}
@@ -423,8 +416,6 @@
 	\end{alertblock}
 \end{frame}
 	
-	\subsection{Namespaces}
-	
 \begin{frame}
 \frametitle{Namespaces}
 	\begin{columns}[T]
@@ -447,7 +438,6 @@
 	This works with the \texttt{sys}-module, which you can easily import. This system module provides the list \texttt{sys.argv} which contains command line arguments as strings. \\ Another way is to read the keyboard input during runtime of your program using the \texttt{raw\_input} or \texttt{input} methods.
 \end{frame}
 
-\subsection{sys module}
 
 \begin{frame}
 \frametitle{sys-module example}
@@ -540,10 +530,34 @@
 \section{Polyfit}
 \begin{frame}
 \frametitle{Polynomial fit with numpy}
-	Numpy provides a function for polynomial curve fitting based on the minimalization of the squared errors between the polynomial and your points. \\If you store your points in a \texttt{numpy array} you could fit them as follows:
-	%TODO Picture of curve fit!
+	Numpy provides a function for polynomial curve fitting based on the minimalization of the squared errors between the polynomial and your points. \\
+	\begin{columns}[T]
+		\begin{column}[T]{0.6\textwidth}
+			\includegraphics[width = 1\textwidth]{SimpleFitPlot.png}
+		\end{column}
+		\begin{column}[T]{0.4\textwidth}
+			First order polynomial fit by 4 points
+		\end{column}
+	\end{columns}
+	
 \end{frame}
 
+\begin{frame}
+\frametitle{Polynomial fit with numpy}
+	\includegraphics[width = 1 \textwidth]{SimpleFit.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Polynomial fit with numpy}
+\begin{columns}[T]
+		\begin{column}[T]{0.8\textwidth}
+			\includegraphics[width = 1\textwidth]{FitPlot.png}
+		\end{column}
+		\begin{column}[T]{0.2\textwidth}
+			Third-order polynomial fit of random noise on a signal. Comparison between the initial signal and the fit.
+		\end{column}
+	\end{columns}
+\end{frame}
 
 \section{Literature}
 \begin{frame}
@@ -554,7 +568,7 @@
 		\item No matter what problem you have, someone had it before: \url{https://stackoverflow.com/}
 		\item Python documentation: \url{https://www.python.org/} and matplotlib: \url{https://matplotlib.org/} use the examples and change them according to your wishes!
 		\item If you love mathematical problems: \url{https://projecteuler.net/}
-		\item My solutions to this exercises: \url{https://github.com/sophieaerdker/SOWAS_Lerntraining}
+		\item My solutions to this exercises and examples: \url{https://github.com/sophieaerdker/SOWAS_Lerntraining}
 	\end{itemize}
 \end{frame}
 
